@@ -1,0 +1,277 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header__wrap
+	.main-cont
+		.header
+			a(href="#").header__logo
+				img(src="img/logo.png", alt="")
+			.header__slogan Натяжные потолки, фотопечать и комплектующие
+			a(href="tel:+7 (383) 209-92-60").header__phone +7 (383) 209-92-60
+			.header__search
+				.header__search-panel
+					.header__search-panel-wrap
+						input(type="text" placeholder="поиск" class="input")
+				+icon("search","icon")
+			.head-toggle
+				+icon("menu","icon icon-open")
+				+icon("close","icon icon-close")
+		.slide-menu
+			.slide-menu__list
+				-
+					var items = [
+					'натяжные потолки',
+					'шумоизоляция',
+					'стены',
+					'светильники',
+					'фотопечать',
+					'дилерам',
+					'отзывы',
+					'наши работы',
+					'контакты'
+					];
+				each item in items
+					a(href="#").slide-menu__list-el #{item}
+			.slide-menu-search
+				.slide-menu-search__input
+					input(type="text" placeholder="Поиск" class="input")
+				.slide-menu-search__icon
+					+icon("search","icon")
+	.header-menu__wrap
+		.main-cont
+			.header-menu
+				-
+					var items = [
+						'натяжные потолки',
+						'шумоизоляция',
+						'стены',
+						'светильники',
+						'фотопечать',
+						'дилерам',
+						'отзывы',
+						'наши работы',
+						'контакты'
+						];
+				each item in items
+					a(href="/" class=item=='натяжные потолки'?'header-menu__el--active':'').header-menu__el #{item}
+
+.main-banner(style="background-image:url('img/head-banner-mobile.jpg')")
+	.main-banner-filter
+	.main-cont
+		.main-banner__cont
+			.bread
+				a(href="#").bread__el Главная
+				a(href="#").bread__el Матовые натяжные потолки
+			.main-banner__title Матовые натяжные потолки в Новосибирске — от 176 м/кв
+
+.info-wrap
+	.main-cont
+		.info
+			.info__text Глянцевые натяжные потолки – классический вариант дизайна. Как правильно стандартным потолочным покрытием считается полотно белого цвета. В отличии от многих компания «Оптима Сибирь» предлагает множество видов глянцевых потолков. Они решают проблему небольшого объема, создают эффект зеркала, отражают поверхности, тем самым получается ощущение большого помещения. Причем светлые потолки обладают меньшей отражающей способностью, чем темные.
+			a(href="#").info__get подробнее
+
+.template-wrap
+	.main-cont
+		.slider-wrap
+			.template.slider
+				- for (var i=1;i<9;i++)
+					.template__el-wrap
+						a(href="#" style="background-image:url(img/item-"+i+".jpg)").template__el.slider-item
+			.slider-control-wrap
+				.slider-control.slider-control--left
+					+icon("arrow-left","icon")
+				.slider-val
+					.slider-val__current 1
+					span /
+					.slider-val__total
+				.slider-control.slider-control--right
+					+icon("arrow-right","icon")
+
+.how-wrap
+	.main-cont
+		.how
+			.section-title Как мы работаем?
+			.how-list
+				.how-list__line
+				.how-list__el
+					.how-list__icon
+						+icon("phone--color","icon")
+					.how-list__text Позвоните или оставьте заявку
+				.how-list__el
+					.how-list__icon
+						+icon("call--color","icon")
+					.how-list__text Менеджер подробно ответит на все вопросы
+				.how-list__el
+					.how-list__icon
+						+icon("ruller--color","icon")
+					.how-list__text Запишитесь на бесплатный замер
+				.how-list__el
+					.how-list__icon
+						+icon("note--color","icon")
+					.how-list__text Заключение договора и оплата (возможно на дому)
+				.how-list__el
+					.how-list__icon
+						+icon("tools--color","icon")
+					.how-list__text Назначьте удобный день для монтажа
+				.how-list__el
+					.how-list__icon
+						+icon("shield--color","icon")
+					.how-list__text Гарантия 10 лет на все потолки
+
+.calc-wrap
+	.main-cont
+		.section-title.section-title--calc Расчет стоимости натяжного потолка с установкой
+		.calc
+			.calc-icon(style="background-image:url('img/path.svg')")
+				img(src="img/rule.png", alt="")
+			.calc-content
+				.calc-range
+					.calc-range__info
+						.calc-range__info__text Площадь:
+						.calc-range__info__val
+							span 1
+							| м/кв
+					.calc-slider
+				.calc-get
+					.calc-get__val 5600 - 7800 руб.
+					.calc-get__btn <span>вызвать на </span> бесплатный замер
+
+.solution-wrap
+	.main-cont
+		.section-title Готовые решения
+		.slider-wrap
+			.solution.slider
+				- for (var i=4;i<7;i++)
+					.solution__el.slider-item
+						.solution__el-head
+							.solution__el-img(style="background-image:url(img/item-"+i+".jpg)")
+						.solution__el-content
+							.solution__el-title Матовый натяжной потолок в детскую комнату
+							.solution-list
+								.solution-list__el
+									.solution-list__name Площадь
+									.solution-list__val 14,5 м2
+								.solution-list__el
+									.solution-list__name Обработка угла
+									.solution-list__val 8 шт.
+								.solution-list__el
+									.solution-list__name Обход трубы
+									.solution-list__val 1 шт.
+								.solution-list__el
+									.solution-list__name Профиль алюминий
+									.solution-list__val 16 м
+								.solution-list__el
+									.solution-list__name Изготовл. отверстий
+									.solution-list__val 1 шт.
+								.solution-list__el
+									.solution-list__name Закладная
+									.solution-list__val 1 шт.
+								.solution-list__el
+									.solution-list__name Лента маскировочная
+									.solution-list__val 16 м
+								.solution-list__el
+									.solution-list__name Марка полотна
+									.solution-list__val Pongs
+								.solution-list__el
+									.solution-list__name Цвет
+									.solution-list__val Белый
+							.solution-total
+								.solution-total__false 10 000 руб.
+								.solution-total__true 6 400 руб.
+							a(href="#").solution-get хочу так же
+			.slider-control-wrap
+				.slider-control.slider-control--left
+					+icon("arrow-left","icon")
+				.slider-val
+					.slider-val__current 1
+					span /
+					.slider-val__total
+				.slider-control.slider-control--right
+					+icon("arrow-right","icon")
+
+.color-wrap
+	.main-cont
+		.section-title Цвет потолка
+		.colors.carousel
+			- for (var i=1;i<5;i++)
+				.colors__el-wrap
+					a(href="#" style="background-image:url(img/color-"+i+".jpg)").colors__el
+						.colors__el-filter
+						.colors__el-content
+							.colors__el-title Кремовые
+							.colors__el-text от 120 руб. м/кв
+
+.advant-wrap
+	.main-cont
+		.section-title Наши преимущества
+		.advant.carousel
+			- for (var i=0;i<2;i++)
+				.advant__el
+					.advant__el-head(style="background-image:url('img/pattern.png')") 15
+					.advant__el-content Лет — средний срок эксплуатации наших обьектов
+				.advant__el
+					.advant__el-head(style="background-image:url('img/pattern.png')") 200
+					.advant__el-content Оттенков и фактур.Подберем цвет под любой дизайн
+				.advant__el
+					.advant__el-head(style="background-image:url('img/pattern.png')") 346
+					.advant__el-content Клиентов купили <br> потолки в 2017 году
+				.advant__el
+					.advant__el-head(style="background-image:url('img/pattern.png')") 100К
+					.advant__el-content Кв.м полотна было установлено за 15 лет работы
+
+.service-wrap
+	.main-cont
+		.section-title Заказать дополнительные услуги
+		.services
+			- for (var i=1;i<4;i++)
+				a(href="#" style="background-image:url(img/service-"+i+".jpg)").services__el
+					.services__el-filter
+					.services__el-content
+						.services__el-title Монтаж гардин
+						.services__el-text от 200 руб.
+
+.order-wrap
+	.main-cont
+		.order
+			.order-content
+				.order-title Вызвать бесплатно замерщика
+				.order-form
+					form(action="")
+						.order-form__row--half
+							input(type="text" placeholder="Ваше имя" class="input")
+							input(type="text" placeholder="Телефон" class="input")
+						input(type="submit" value="вызвать замерщика" class="order-form__get")
+						.check-el
+							label.style-label.style-label--checkbox
+								input(type="checkbox").sytle-input
+								.sytle-input-element
+									+icon("checked","icon-check")
+								.sytle-input-text Даю свое согласие на обработку персональных данных
+			img(src="img/worker.png", alt="").order-img
+
+.footer-wrap
+	.main-cont
+		.footer
+			.footer-content
+				.footer-info
+					.footer-name © 2008-2018 Оптима сибирь
+					a(href="#").footer-text Политика обработки персональных данных
+				.footer-menu
+					-
+						var items = [
+							'Натяжные потолки',
+							'Шумоизоляция',
+							'Светильники',
+							'Стены',
+							'Фотопечать'
+							];
+					each item in items
+						a(href="#").footer-menu__el
+							span #{item}
+			.footer-contact
+				a(href="tel:+7 (383) 209-92-60").footer-contact__phone +7 (383) 209-92-60
+				.footer-contact__text 630007, ул. Фабричная, 39; 1 этаж, офисы 101, 102.
+
+
+
+include ./block_html/_script.pug

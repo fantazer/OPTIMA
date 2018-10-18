@@ -76,7 +76,7 @@ include block_html/_include.pug
 			.template.slider
 				- for (var i=1;i<9;i++)
 					.template__el-wrap
-						a(href="#" style="background-image:url(img/item-"+i+".jpg)").template__el.slider-item
+						a(href="img/item-"+i+".jpg" style="background-image:url(img/item-"+i+".jpg)" data-fancybox="images").fancybox.template__el.slider-item
 			.slider-control-wrap
 				.slider-control.slider-control--left
 					+icon("arrow-left","icon")

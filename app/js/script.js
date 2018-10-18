@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+
+	//fancy
+	$('.fancybox').fancybox();
+	//fancy ===end
 	// range-slider
 	$(".calc-slider").ionRangeSlider({
 		min: 1,
